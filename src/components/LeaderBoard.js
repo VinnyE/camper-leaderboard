@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 
-const TableData = props => <td>{props.tableData}</td>
+import '../styles/LeaderBoard.css';
+
+const TableData = props => 
+  <td className={`LeaderBoard-table-row-item ${props.leftAlign ? "left-align" : ''}`}>
+    {props.tableData}
+  </td>
 
 const TableRow = props => 
-  <tr>
+  <tr className="LeaderBoard-table-row">
     <TableData tableData={props.rank} />
-    <TableData tableData={props.username} />
+    <TableData tableData={props.username} leftAlign={true} />
     <TableData tableData={props.recent} />
     <TableData tableData={props.alltime} />
   </tr>
 
-const TableHeader = props => <th>{props.category}</th>
+const TableHeader = props => 
+  <th className={`LeaderBoard-table-head-item ${props.center ? "centered" : ''}`}>
+    {props.category}
+  </th>
 
 const HeaderTableRow = props =>
-  <tr>
+  <tr className="LeaderBoard-table-row">
     <TableHeader category={props.categoryOne} />
     <TableHeader category={props.categoryTwo} />
     <TableHeader category={props.categoryThree} />
@@ -21,8 +29,8 @@ const HeaderTableRow = props =>
   </tr>
 
 const Table = props =>  
-  <table>
-    <thead>
+  <table className="LeaderBoard-table">
+    <thead className="LeaderBoard-table-head">
       <HeaderTableRow {...props.tableCategories} />
     </thead>
     <tbody>
@@ -37,7 +45,7 @@ class LeaderBoard extends Component {
     const { apiData } = this.props
     const tableCategories = {
       categoryOne: 'Rank',
-      categoryTwo: 'Camper Name',
+      categoryTwo: 'Username',
       categoryThree: 'Points in past 30 days',
       categoryFour: 'All time points'
     }
