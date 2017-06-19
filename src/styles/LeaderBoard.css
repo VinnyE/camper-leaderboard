@@ -1,36 +1,31 @@
-.LeaderBoard {
-  display: flex;
-  flex: 1;
-}
-
 .LeaderBoard-table {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  border-collapse: collapse;
 }
 
 .LeaderBoard-table-row {
-  display: flex;
-  justify-content: space-around;
-  padding: 5px 0 5px 0px;
+  text-align: left;
+}
+
+.LeaderBoard-table-row:nth-child(even) {
+  background-color: #eee;
 }
 
 .LeaderBoard-table-row-item {
-  display: flex;
-  flex-grow: 1;
-  flex-basis: auto;
-  max-width: 25%;
-  text-wrap: nowrap;
-  justify-content: center;
+  padding: 8px;
+}
+
+.LeaderBoard-table-head {
+  background-color: #888;
 }
 
 .LeaderBoard-table-head-item {
-  flex: 1;
+  padding: 8px;
 }
 
-@media (max-width: 540px) {
-
+.rank-col {
+  width: 5%;
 }
+
 
 
 

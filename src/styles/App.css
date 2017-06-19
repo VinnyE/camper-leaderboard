@@ -1,9 +1,5 @@
 .App {
-  display: flex;
-  flex: 0 0 960px;
   margin: 0 auto;
   padding: 5% 0 0;
-  min-width: 480px;
   max-width: 960px;
-  overflow-x: scroll;
 }

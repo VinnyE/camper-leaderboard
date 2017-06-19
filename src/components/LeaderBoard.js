@@ -2,30 +2,20 @@ import React, { Component } from 'react';
 
 import '../styles/LeaderBoard.css';
 
-const TableData = props => 
-  <td className={`LeaderBoard-table-row-item ${props.leftAlign ? "left-align" : ''}`}>
-    {props.tableData}
-  </td>
-
 const TableRow = props => 
   <tr className="LeaderBoard-table-row">
-    <TableData tableData={props.rank} />
-    <TableData tableData={props.username} leftAlign={true} />
-    <TableData tableData={props.recent} />
-    <TableData tableData={props.alltime} />
+    <td className='LeaderBoard-table-row-item rank-col'>{props.rank}</td>
+    <td className='LeaderBoard-table-row-item'>{props.username}</td>
+    <td className='LeaderBoard-table-row-item'>{props.recent}</td>
+    <td className='LeaderBoard-table-row-item'>{props.alltime}</td>
   </tr>
-
-const TableHeader = props => 
-  <th className={`LeaderBoard-table-head-item ${props.center ? "centered" : ''}`}>
-    {props.category}
-  </th>
 
 const HeaderTableRow = props =>
   <tr className="LeaderBoard-table-row">
-    <TableHeader category={props.categoryOne} />
-    <TableHeader category={props.categoryTwo} />
-    <TableHeader category={props.categoryThree} />
-    <TableHeader category={props.categoryFour} />
+    <th className='LeaderBoard-table-head-item rank-col'>{props.categoryOne}</th>
+    <th className='LeaderBoard-table-head-item'>{props.categoryTwo}</th>
+    <th className='LeaderBoard-table-head-item'>{props.categoryThree}</th>
+    <th className='LeaderBoard-table-head-item'>{props.categoryFour}</th>
   </tr>
 
 const Table = props =>  
